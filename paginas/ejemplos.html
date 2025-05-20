@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos</title>
+    <link rel="stylesheet" href="../estilos/ejemplos.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="tag">Flutter</a> <a href="por-que-flutter.html" class="tag">¿Por qué
+                Flutter?</a>
+            <a href="ejemplos.html" class="tag">Ejemplos</a>
+        </nav>
+        <div class="main-scroll">
+            <hr>
+            <h1>Ejemplos de Flutter</h1>
+            <h2>Ejemplo 1: Hola Mundo</h2>
+            <pre><code>
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Hello World',
+      theme: ThemeData(
+        // useMaterial3: false,
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final String title;
+  const MyHomePage({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: const Center(
+        child: Text(
+          'Hello, World!',
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                <img src="../assets/flutter_hello_world.png" alt="Flutter Hola Mundo"
+                    style="max-width: 350px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 12px #0003;">
+            </div>
+            <br>
+            <h2>Ejemplo 2: Contador</h2>
+            <pre><code>
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Counter(),
+    );
+  }
+}
+
+class Counter extends StatefulWidget {
+  const Counter({super.key});
+
+  @override
+  State createState() => _CounterState();
+}
+
+class _CounterState extends State {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Contador')),
+      body: Center(
+        child: Text('Valor: $_count', style: const TextStyle(fontSize: 24)),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() => _count++),
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+</code></pre>
+            <br>
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                <img src="../assets/flutter_counter.png" alt="Flutter Hola Mundo"
+                    style="max-width: 350px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 12px #0003;">
+            </div>
+            <br>
+            <hr>
+            <footer>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
