@@ -25,5 +25,4 @@ Cada página HTML tiene un menú de navegación fijo en la parte superior para f
 - CSS3 (sin frameworks externos)
 
 ## Autor
-Generado con ayuda de GitHub Copilot.
 
